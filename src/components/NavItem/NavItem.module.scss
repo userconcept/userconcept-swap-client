@@ -1,0 +1,21 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.NavItem {
+    padding: 0;
+
+    &_active {
+
+        & .NavItem__link {
+            color: v.$color_light_primary;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: m.rem(12) m.rem(16);
+        color: v.$color_light_on_surface;
+        text-decoration: none;
+        transition: color v.$transition_01;
+    }
+}

@@ -1,0 +1,45 @@
+// Common styles:
+
+@use './mixins' as m;
+@use './vars' as v;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: v.$color_light_on_surface_selection;
+}
+
+html {
+    font-size: 100%;
+    text-size-adjust: none;
+}
+
+body {
+    margin: 0;
+    font-size: m.rem(16);
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: v.$font_family_normal;
+    color: v.$color_light_on_surface;
+    text-rendering: optimizeLegibility;
+}
+
+// Footer to bottom:
+
+.main {
+    flex-grow: 1;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#root > footer {
+    margin-top: auto;
+}

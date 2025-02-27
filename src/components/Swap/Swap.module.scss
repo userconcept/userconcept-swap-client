@@ -1,0 +1,18 @@
+@use '../../assets/styles/mixins' as m;
+
+.Swap {
+    padding: m.rem(16) 0;
+
+    &__container {
+        padding: 0 m.rem(16);
+
+        @include m.media_1200_min_width {
+            max-width: m.rem(1200);
+            margin: 0 auto;
+        }
+    }
+
+    &__Title {
+        margin: 0;
+    }
+}

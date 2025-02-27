@@ -1,0 +1,73 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.Header {
+    position: sticky;
+    top: 0;
+    padding: m.rem(16) 0;
+    background-color: v.$color_light_surface_container;
+    z-index: 1;
+
+    &__container {
+        display: flex;
+        padding: 0 m.rem(16);
+
+        @include m.media_1200_min_width {
+            max-width: m.rem(1200);
+            margin: 0 auto;
+            position: relative;
+        }
+    }
+
+    &__Logo {
+
+        @include m.media_1200_min_width {
+            display: flex;
+        }
+    }
+
+    &__NavHeader {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateY(100%);
+        transition: transform v.$transition_05;
+
+        @include m.media_1200_min_width {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: auto;
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            transition: transform v.$transition_none;
+        }
+
+        &_active {
+            transform: translateY(0);
+
+            @include m.media_1200_min_width {
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &__ButtonNav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: m.rem(12);
+
+        @include m.media_1200_min_width {
+            display: none;
+        }
+    }
+
+    &__ButtonSquare {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 m.rem(12) 0 auto;
+    }
+}

@@ -1,0 +1,5 @@
+@use '../../assets/styles/mixins' as m;
+
+.Template {
+    padding: m.rem(16);
+}

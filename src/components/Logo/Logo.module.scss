@@ -1,0 +1,41 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.Logo {
+    text-decoration: none;
+
+    svg {
+
+        &:first-of-type {
+            display: block;
+            width: m.rem(48);
+            height: m.rem(48);
+        }
+
+        &:last-of-type {
+            display: none;
+
+            @include m.media_1200_min_width {
+                width: m.rem(156);
+                height: m.rem(48);
+            }
+        }
+
+        &:first-of-type,
+        &:last-of-type {
+
+            @include m.media_1200_min_width {
+                display: initial;
+            }
+        }
+    }
+
+    &__text {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        overflow: hidden;
+        white-space: nowrap;
+        clip-path: inset(50%);
+    }
+}

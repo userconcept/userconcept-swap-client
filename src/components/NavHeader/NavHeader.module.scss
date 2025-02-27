@@ -1,0 +1,24 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.NavHeader {
+    padding: m.rem(16) 0;
+    background-color: v.$color_light_surface_container;
+
+    @include m.media_1200_min_width {
+        padding: 0;
+        background-color: transparent;
+    }
+
+    &__NavList {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+
+        @include m.media_1200_min_width {
+            flex-direction: row;
+            align-items: stretch;
+        }
+    }
+}

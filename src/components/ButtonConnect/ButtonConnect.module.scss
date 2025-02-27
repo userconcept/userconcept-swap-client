@@ -1,0 +1,50 @@
+@use '../../assets/styles/mixins' as m;
+@use '../../assets/styles/vars' as v;
+
+.ButtonConnect {
+
+    &__button {
+        display: flex;
+        border: m.rem(1) solid v.$color_light_on_surface;
+        padding: m.rem(11) m.rem(20);
+        font-size: m.rem(16);
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: inherit;
+        overflow: visible;
+        text-transform: none;
+        color: v.$color_light_on_surface;
+        background-color: transparent;
+        border-radius: m.rem(6);
+        cursor: pointer;
+
+        svg {
+            width: m.rem(24);
+            height: m.rem(24);
+            margin-right: m.rem(10);
+            fill: currentColor;
+        }
+    }
+
+    &__text {
+
+        &_desktop {
+            width: 1px;
+            height: 1px;
+            position: absolute;
+            overflow: hidden;
+            white-space: nowrap;
+            clip-path: inset(50%);
+
+            @include m.media_1200_min_width {
+                width: auto;
+                height: auto;
+                position: static;
+                overflow: visible;
+                white-space: normal;
+                clip-path: none;
+                margin-left: m.rem(9);
+            }
+        }
+    }
+}

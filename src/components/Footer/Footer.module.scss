@@ -1,0 +1,37 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.Footer {
+    padding: m.rem(16) 0;
+    background-color: v.$color_light_surface_container;
+
+    &__container {
+        display: flex;
+        padding: 0 m.rem(16);
+
+        @include m.media_1200_min_width {
+            max-width: m.rem(1200);
+            margin: 0 auto;
+            position: relative;
+        }
+    }
+
+    &__Logo {
+
+        @include m.media_1200_min_width {
+            display: flex;
+        }
+    }
+
+    &__NavFooter {
+        display: none;
+
+        @include m.media_1200_min_width {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
