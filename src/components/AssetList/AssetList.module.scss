@@ -1,0 +1,15 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.AssetList {
+    padding: 0;
+    list-style: none;
+
+    &__AssetItem {
+        margin: 0;
+
+        & + .AssetList__AssetItem {
+            margin-top: m.rem(16);
+        }
+    }
+}

@@ -53,10 +53,14 @@
         }
     }
 
-    &__ButtonNav {
+    &__ButtonNav,
+    &__ButtonSquare {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &__ButtonNav {
         margin-left: m.rem(12);
 
         @include m.media_1200_min_width {
@@ -65,9 +69,6 @@
     }
 
     &__ButtonSquare {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 0 m.rem(12) 0 auto;
     }
 }

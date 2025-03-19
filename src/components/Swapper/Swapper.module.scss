@@ -1,0 +1,49 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.Swapper {
+    position: relative;
+
+    &__SwapperItem {
+
+        & + .Swapper__SwapperItem {
+            margin-top: m.rem(10);
+        }
+    }
+
+    &__swapperButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: m.rem(-31) 0 0 m.rem(-31);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: m.rem(62);
+        height: m.rem(62);
+        border: m.rem(8) solid v.$color_light_surface;
+        padding: 0;
+        font-family: inherit;
+        overflow: visible;
+        text-transform: none;
+        color: v.$color_light_on_surface;
+        background-color: v.$color_light_surface_container;
+        border-radius: 50%;
+        cursor: pointer;
+
+        svg {
+            width: m.rem(24);
+            height: m.rem(24);
+            fill: currentColor;
+        }
+
+        span {
+            width: 1px;
+            height: 1px;
+            position: absolute;
+            overflow: hidden;
+            white-space: nowrap;
+            clip-path: inset(50%);
+        }
+    }
+}

@@ -9,9 +9,13 @@ $font_family_bold: "Roboto Mono", sans-serif;
 
 $color_light_primary: blue; // primary
 
+$color_light_surface: white; // surface
 $color_light_surface_container: lightgray; // surface container
 
 $color_light_on_surface: black; // on surface
+
+$color_light_overlay: rgba(255, 255, 255, .5);
+$blur_light_overlay: blur(3px);
 
 $color_light_on_surface_selection: lightblue; // on surface text selection
 

@@ -1,18 +1,35 @@
 @use '../../assets/styles/mixins' as m;
 
 .Swap {
-    padding: m.rem(16) 0;
+    padding: m.rem(16) 0 m.rem(32);
 
     &__container {
         padding: 0 m.rem(16);
 
-        @include m.media_1200_min_width {
-            max-width: m.rem(1200);
+        @include m.media_450_min_width {
+            max-width: m.rem(450);
             margin: 0 auto;
         }
     }
 
     &__Title {
         margin: 0;
+    }
+
+    &__Swapper {
+        margin-top: m.rem(16);
+    }
+
+    &__Rate {
+        margin-top: m.rem(20);
+    }
+
+    &__Collapse {
+        margin-top: m.rem(8);
+    }
+
+    &__Button {
+        margin-top: m.rem(14);
+        width: 100%;
     }
 }

@@ -17,9 +17,9 @@
     }
 
     &_hidden {
+        margin: 0;
         width: 1px;
         height: 1px;
-        margin: 0;
         position: absolute;
         overflow: hidden;
         white-space: nowrap;

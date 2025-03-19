@@ -1,0 +1,22 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.InputCustom {
+    height: m.rem(32);
+    outline: none;
+    border: none;
+    padding: 0;
+    font-size: m.rem(26);
+    line-height: 1.23076923077;
+    font-weight: 700;
+    font-family: inherit;
+    overflow: visible;
+    text-transform: uppercase;
+    color: v.$color_light_on_surface;
+    background-color: transparent;
+
+    &::placeholder {
+        opacity: 1;
+        color: v.$color_light_on_surface;
+    }
+}

@@ -1,0 +1,48 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.ModalBase {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    @include m.color_light_overlay;
+
+    &__container {
+
+        @include m.media_450_min_width {
+            max-width: m.rem(450);
+            margin: 0 auto;
+            padding: 0 m.rem(16);
+        }
+    }
+
+    &__modal {
+        background-color: v.$color_light_surface_container;
+        border-bottom-left-radius: m.rem(8);
+        border-bottom-right-radius: m.rem(8);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: m.rem(8) 0 m.rem(8) m.rem(16);
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__ButtonClose {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__body {
+        padding: 0 m.rem(16) m.rem(16);
+    }
+}
