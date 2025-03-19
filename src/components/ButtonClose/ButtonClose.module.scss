@@ -1,7 +1,7 @@
 @use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
-.ButtonNav {
+.ButtonClose {
     width: m.rem(48);
     height: m.rem(48);
     border: m.rem(1) solid transparent;
@@ -16,24 +16,6 @@
         width: m.rem(24);
         height: m.rem(24);
         fill: currentColor;
-
-        &:last-of-type {
-            display: none;
-        }
-    }
-
-    &_active {
-
-        svg {
-
-            &:first-of-type {
-                display: none;
-            }
-
-            &:last-of-type {
-                display: initial;
-            }
-        }
     }
 
     &__text {

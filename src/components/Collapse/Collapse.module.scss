@@ -1,0 +1,51 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.Collapse {
+
+    &_active {
+
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+            width: m.rem(24);
+            height: m.rem(24);
+            fill: currentColor;
+        }
+    }
+
+    &__title {
+        font-size: m.rem(16);
+        line-height: 2;
+        font-weight: 700;
+    }
+
+    &__body {
+        margin-top: m.rem(2);
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__itemLeft,
+    &__itemRight {
+        line-height: 2;
+    }
+}

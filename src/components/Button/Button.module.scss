@@ -1,0 +1,25 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.Button {
+    border: m.rem(1) solid v.$color_light_on_surface;
+    padding: m.rem(11) m.rem(20);
+    font-size: m.rem(16);
+    line-height: 1.5;
+    font-family: inherit;
+    overflow: visible;
+    text-transform: none;
+    color: v.$color_light_on_surface;
+    background-color: transparent;
+    border-radius: m.rem(8);
+    cursor: pointer;
+
+    &_primary {
+        border-color: v.$color_light_on_surface;
+        background-color: transparent;
+    }
+}
+
+a.Button {
+    text-decoration: none;
+}

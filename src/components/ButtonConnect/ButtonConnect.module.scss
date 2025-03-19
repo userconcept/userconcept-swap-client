@@ -1,5 +1,5 @@
-@use '../../assets/styles/mixins' as m;
 @use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
 
 .ButtonConnect {
 
@@ -9,19 +9,18 @@
         padding: m.rem(11) m.rem(20);
         font-size: m.rem(16);
         line-height: 1.5;
-        font-weight: 400;
         font-family: inherit;
         overflow: visible;
         text-transform: none;
         color: v.$color_light_on_surface;
         background-color: transparent;
-        border-radius: m.rem(6);
+        border-radius: m.rem(8);
         cursor: pointer;
 
         svg {
+            margin-right: m.rem(10);
             width: m.rem(24);
             height: m.rem(24);
-            margin-right: m.rem(10);
             fill: currentColor;
         }
     }

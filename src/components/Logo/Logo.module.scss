@@ -2,9 +2,11 @@
 @use '../../assets/styles/mixins' as m;
 
 .Logo {
+    color: v.$color_light_on_surface;
     text-decoration: none;
 
     svg {
+        fill: currentColor;
 
         &:first-of-type {
             display: block;

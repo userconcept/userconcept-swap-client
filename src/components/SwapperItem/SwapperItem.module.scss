@@ -1,0 +1,92 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.SwapperItem {
+    padding: m.rem(16);
+    background-color: v.$color_light_surface_container;
+    border-radius: m.rem(8);
+
+    &__top,
+    &__center {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__buttonWallet {
+        display: flex;
+        border: none;
+        padding: 0;
+        font-size: m.rem(16);
+        line-height: 1.5;
+        font-family: inherit;
+        overflow: visible;
+        text-transform: none;
+        color: v.$color_light_on_surface;
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: m.rem(-4);
+            left: 0;
+            right: 0;
+            bottom: m.rem(-4);
+        }
+
+        svg {
+            margin-right: m.rem(6);
+            width: m.rem(24);
+            height: m.rem(24);
+            fill: currentColor;
+        }
+    }
+
+    &__center {
+        margin-top: m.rem(10);
+        gap: m.rem(16);
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        border: none;
+        padding: 0;
+        font-size: m.rem(26);
+        line-height: 1.23076923077;
+        font-weight: 700;
+        font-family: inherit;
+        overflow: visible;
+        text-transform: uppercase;
+        color: v.$color_light_on_surface;
+        background-color: transparent;
+        cursor: pointer;
+
+        img {
+            margin-right: m.rem(10);
+            width: m.rem(30);
+            height: m.rem(30);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        svg {
+            margin-left: m.rem(8);
+            width: m.rem(24);
+            height: m.rem(24);
+            fill: currentColor;
+        }
+    }
+
+    &__InputCustom {
+        display: block;
+        width: 100%;
+        text-align: right;
+    }
+
+    &__bottomRight {
+        text-align: right;
+    }
+}

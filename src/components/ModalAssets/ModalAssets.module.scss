@@ -1,0 +1,16 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.ModalAssets {
+
+    &__InputIcon {
+
+        & + .ModalAssets__AssetList {
+            margin-top: m.rem(16);
+        }
+    }
+
+    &__AssetList {
+        margin: 0;
+    }
+}

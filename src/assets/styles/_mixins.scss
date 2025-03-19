@@ -1,3 +1,5 @@
+@use './vars' as v;
+
 // Mixins:
 
 // Rems:
@@ -5,6 +7,13 @@
 @function rem($num) {
     $strip-unit: calc($num / ($num * 0 + 1));
     @return calc($strip-unit / 16 * 1rem);
+}
+
+// Colors:
+
+@mixin color_light_overlay {
+    background-color: v.$color_light_overlay;
+    backdrop-filter: v.$blur_light_overlay;
 }
 
 // Media:

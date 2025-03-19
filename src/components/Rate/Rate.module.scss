@@ -1,0 +1,49 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.Rate {
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+        font-weight: 700;
+    }
+
+    &__right {
+        display: flex;
+    }
+
+    &__separator {
+        margin: 0 m.rem(8);
+    }
+
+    &__button {
+        margin-left: m.rem(10);
+        border: none;
+        padding: 0;
+        font-size: 0;
+        font-family: inherit;
+        overflow: visible;
+        text-transform: none;
+        color: v.$color_light_on_surface;
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: m.rem(-4);
+            left: m.rem(-4);
+            right: m.rem(-4);
+            bottom: m.rem(-4);
+        }
+
+        svg {
+            width: m.rem(24);
+            height: m.rem(24);
+            fill: currentColor;
+        }
+    }
+}
