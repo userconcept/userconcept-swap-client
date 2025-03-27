@@ -2,6 +2,7 @@
 @use '../../assets/styles/mixins' as m;
 
 .ButtonConnect {
+    position: relative;
 
     &__button {
         display: flex;
@@ -25,7 +26,8 @@
         }
     }
 
-    &__text {
+    &__textDefault,
+    &__textConnected {
 
         &_desktop {
             width: 1px;
@@ -36,14 +38,58 @@
             clip-path: inset(50%);
 
             @include m.media_1200_min_width {
+                margin-left: m.rem(9);
                 width: auto;
                 height: auto;
                 position: static;
                 overflow: visible;
                 white-space: normal;
                 clip-path: none;
-                margin-left: m.rem(9);
             }
         }
+    }
+
+    &__body {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: m.rem(8);
+        border: m.rem(1) solid v.$color_light_on_surface;
+        padding: m.rem(16);
+        background-color: v.$color_light_surface_container;
+        border-radius: m.rem(8);
+    }
+
+    &__item {
+        display: flex;
+
+        img {
+            width: m.rem(30);
+            height: m.rem(30);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        span {
+            margin-left: m.rem(9);
+            line-height: 1.875;
+        }
+    }
+
+    &__buttonDisconnect {
+        margin-top: m.rem(8);
+        width: 100%;
+        border: m.rem(1) solid v.$color_light_on_surface;
+        padding: m.rem(11) m.rem(20);
+        font-size: m.rem(16);
+        line-height: 1.5;
+        font-family: inherit;
+        overflow: visible;
+        text-transform: none;
+        text-align: center;
+        color: v.$color_light_on_surface;
+        background-color: transparent;
+        border-radius: m.rem(8);
+        cursor: pointer;
     }
 }

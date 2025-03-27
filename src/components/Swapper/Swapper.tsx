@@ -42,7 +42,7 @@ function Swapper({ className }: { className: string; }) {
                 className={styles.Swapper__swapperButton}
             >
                 <IconSwapVert />
-                <span>Change Swap Direction</span>
+                <span>Change swap direction</span>
             </button>
         </div>
     );
