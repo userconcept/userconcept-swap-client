@@ -21,7 +21,7 @@ function Swapper({ className }: { className: string; }) {
                 className={styles.Swapper__SwapperItem}
                 direction="out"
                 balance="0"
-                image="/images/image_usdt.png"
+                image="https://userconcept.github.io/userconcept-swap-client/images/image_usdt.png"
                 imageAlt="USDT"
                 symbol="USDT"
                 iconArrow={IconArrowDown}
@@ -32,7 +32,7 @@ function Swapper({ className }: { className: string; }) {
                 className={styles.Swapper__SwapperItem}
                 direction="in"
                 balance="0"
-                image="/images/image_ton.png"
+                image="https://userconcept.github.io/userconcept-swap-client/images/image_ton.png"
                 imageAlt="TON"
                 symbol="TON"
                 iconArrow={IconArrowDown}
