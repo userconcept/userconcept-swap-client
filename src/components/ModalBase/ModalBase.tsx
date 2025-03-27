@@ -43,7 +43,7 @@ function ModalBase({
                             className={styles.ModalBase__ButtonClose}
                             onClick={onClose}
                         >
-                            Close Modal
+                            Close modal
                         </ButtonClose>
                     </div>
                     <div className={styles.ModalBase__body}>

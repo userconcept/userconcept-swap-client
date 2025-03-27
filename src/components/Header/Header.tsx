@@ -44,12 +44,12 @@ function Header() {
                     isActive={navIsOpen}
                     onClick={handleNavOpen}
                 >
-                    Open Navigation
+                    Open navigation
                 </ButtonNav>
                 <ButtonSquare
                     className={styles.Header__ButtonSquare}
                     color="base"
-                    text="Open Settings"
+                    text="Open settings"
                 >
                     <IconSettings />
                 </ButtonSquare>

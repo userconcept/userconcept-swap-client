@@ -78,7 +78,7 @@ function SwapperItem({
                 <ModalAssets
                     isOpen={modalIsOpen}
                     onClose={() => setModalIsOpen(false)}
-                    title="Select Token"
+                    title="Select token"
                 />
                 <div className={styles.SwapperItem__centerRight}>
                     <InputCustom

@@ -37,7 +37,7 @@ function Swap() {
                 <ModalSwap
                     isOpen={modalIsOpen}
                     onClose={() => setModalIsOpen(false)}
-                    title="Confirm Swap"
+                    title="Confirm swap"
                 />
             </div>
         </section>
