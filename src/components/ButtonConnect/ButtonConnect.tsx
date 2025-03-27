@@ -84,7 +84,7 @@ function ButtonConnect({
                 <div className={styles.ButtonConnect__body}>
                     <div className={styles.ButtonConnect__item}>
                         <img
-                            src="/images/image_ton.png"
+                            src="https://userconcept.github.io/userconcept-swap-client/images/image_ton.png"
                             width="120"
                             height="120"
                             alt="TON"

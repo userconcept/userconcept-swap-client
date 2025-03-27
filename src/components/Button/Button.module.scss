@@ -18,6 +18,11 @@
         border-color: v.$color_light_on_surface;
         background-color: transparent;
     }
+
+    &_surface_container {
+        border-color: v.$color_light_surface_container;
+        background-color: v.$color_light_surface_container;
+    }
 }
 
 a.Button {

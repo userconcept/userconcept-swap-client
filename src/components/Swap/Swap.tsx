@@ -29,7 +29,7 @@ function Swap() {
                 <Collapse className={styles.Swap__Collapse} />
                 <Button
                     className={styles.Swap__Button}
-                    color="primary"
+                    color="surface_container"
                     onClick={() => setModalIsOpen(true)}
                 >
                     Swap
