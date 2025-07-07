@@ -1,6 +1,6 @@
 {
   "name": "userconcept-swap-client",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "userconcept swap - Web3 DApp on TON blockchain",
   "author": "userconcept <alex@userconcept.ru> (https://userconcept.ru)",
   "main": "index.js",

@@ -25,9 +25,6 @@ function SwapperItem({
     symbol,
     name,
     image,
-    decimals,
-    price,
-    diff24,
     currency,
     value,
     onChange
