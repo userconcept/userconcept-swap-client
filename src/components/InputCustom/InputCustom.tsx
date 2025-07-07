@@ -39,6 +39,8 @@ function InputCustom({
             onChange={onChange}
             autoComplete={autoComplete}
             placeholder={placeholder}
+            inputMode="decimal"
+            pattern="^([0-9]+([.,][0-9]*)?|[0-9]*[.,][0-9]+)$"
         />
     );
 }

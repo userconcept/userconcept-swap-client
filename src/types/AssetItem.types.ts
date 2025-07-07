@@ -1,7 +1,9 @@
 export type AssetItemType = {
-    id: number;
-    image: string;
-    imageAlt: string;
+    id: string;
     symbol: string;
     name: string;
+    image: string;
+    decimals: number;
+    price: number;
+    diff24: string;
 }

@@ -1,61 +1,69 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 
 import InputCustom from '../InputCustom/InputCustom.tsx';
 import ModalAssets from '../ModalAssets/ModalAssets.tsx';
 
-import type { SwapperItemType } from '../../types/SwapperItem.types.ts';
+import type { AssetItemType } from '../../types/AssetItem.types.ts';
 
 import IconWallet from '../../assets/images/icon_wallet.svg?react';
+import IconArrowDown from '../../assets/images/icon_arrow_down.svg?react';
 
 import styles from './SwapperItem.module.scss';
 
 type Props = {
     className: string;
-} & SwapperItemType
+    direction: string;
+    currency: number;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+} & Omit<AssetItemType, 'id'>
 
 function SwapperItem({
     className,
     direction,
-    balance,
-    image,
-    imageAlt,
     symbol,
-    iconArrow,
+    name,
+    image,
+    decimals,
+    price,
+    diff24,
     currency,
-    active
+    value,
+    onChange
 }: Props) {
     console.log('SwapperItem');
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [value, setValue] = useState('');
 
-    function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setValue(e.target.value);
+    function formatCurrency(currency: number) {
+        return currency.toLocaleString('en-US', {
+            style: 'decimal',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
     }
 
     return (
         <div
             className={clsx(
                 styles.SwapperItem,
-                active && styles.SwapperItem_active,
                 className
             )}
         >
             <div className={styles.SwapperItem__top}>
                 <div className={styles.SwapperItem__topLeft}>
                     <span>
-                        {direction === 'out' && 'You send'}
-                        {direction === 'in' && 'You receive'}
+                        {direction === 'from' && 'You send'}
+                        {direction === 'to' && 'You receive'}
                     </span>
                 </div>
                 <div className={styles.SwapperItem__topRight}>
                     <button className={clsx(
-                        styles.SwapperItem__buttonWallet,
-                        styles.SwapperItem__buttonWallet_active
+                        styles.SwapperItem__buttonWallet
                     )}>
                         <IconWallet />
-                        <span>{balance}</span>
+                        <span>0</span>
                     </button>
                 </div>
             </div>
@@ -69,10 +77,10 @@ function SwapperItem({
                             src={image}
                             width="120"
                             height="120"
-                            alt={imageAlt}
+                            alt={name}
                         />
                         <span>{symbol}</span>
-                        {iconArrow()}
+                        {<IconArrowDown />}
                     </button>
                 </div>
                 <ModalAssets
@@ -87,7 +95,7 @@ function SwapperItem({
                         id={`swap-${direction}-${symbol}`}
                         name={`swap-${direction}-${symbol}`}
                         value={value}
-                        onChange={handleInputChange}
+                        onChange={onChange}
                         autoComplete="off"
                         placeholder="0"
                     />
@@ -95,7 +103,7 @@ function SwapperItem({
             </div>
             <div className={styles.SwapperItem__bottom}>
                 <div className={styles.SwapperItem__bottomRight}>
-                    <span>${currency}</span>
+                    <span>${formatCurrency(currency)}</span>
                 </div>
             </div>
         </div>

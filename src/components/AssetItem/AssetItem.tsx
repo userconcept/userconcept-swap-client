@@ -11,10 +11,9 @@ type Props = {
 
 function AssetItem({
     className,
-    image,
-    imageAlt,
     symbol,
-    name
+    name,
+    image
 }: PropsWithChildren<Props>) {
     console.log('AssetItem');
 
@@ -28,7 +27,7 @@ function AssetItem({
             <img
                 className={styles.AssetItem__img}
                 src={image}
-                alt={imageAlt}
+                alt={name}
             />
             <div className={styles.AssetItem__top}>
                 <h3 className={styles.AssetItem__title}>{symbol}</h3>
