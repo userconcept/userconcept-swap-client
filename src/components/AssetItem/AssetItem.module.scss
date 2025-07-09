@@ -30,4 +30,12 @@
         line-height: 1.25;
         font-weight: 700;
     }
+
+    &__growUp {
+        color: green;
+    }
+
+    &__growDown {
+        color: red;
+    }
 }

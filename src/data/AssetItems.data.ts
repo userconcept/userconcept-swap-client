@@ -23,7 +23,7 @@ export const AssetItems: AssetItemType[] = [{
     image: 'https://userconcept.github.io/userconcept-swap-client/images/image_not.png',
     decimals: 9,
     price: 0.001875,
-    diff24: '8.32%'
+    diff24: '-8.32%'
 }, {
     id: '4',
     symbol: 'REDO',
