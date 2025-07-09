@@ -7,13 +7,15 @@ import styles from './AssetItem.module.scss';
 
 type Props = {
     className: string;
+    onSelect: () => void;
 } & AssetItemType
 
 function AssetItem({
     className,
     symbol,
     name,
-    image
+    image,
+    onSelect
 }: PropsWithChildren<Props>) {
     console.log('AssetItem');
 
@@ -23,6 +25,7 @@ function AssetItem({
                 styles.AssetItem,
                 className
             )}
+            onClick={onSelect}
         >
             <img
                 className={styles.AssetItem__img}

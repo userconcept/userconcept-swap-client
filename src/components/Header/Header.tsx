@@ -6,7 +6,7 @@ import ButtonNav from '../ButtonNav/ButtonNav.tsx';
 import ButtonSquare from '../ButtonSquare/ButtonSquare.tsx';
 import ButtonConnect from '../ButtonConnect/ButtonConnect.tsx';
 
-import IconSettings from '../../assets/images/icon_settings.svg?react';
+import IconModeLight from '../../assets/images/icon_mode_light.svg?react';
 
 import styles from './Header.module.scss';
 
@@ -49,9 +49,9 @@ function Header() {
                 <ButtonSquare
                     className={styles.Header__ButtonSquare}
                     color="base"
-                    text="Open settings"
+                    text="Change light and dark mode"
                 >
-                    <IconSettings />
+                    <IconModeLight />
                 </ButtonSquare>
                 <ButtonConnect />
             </div>

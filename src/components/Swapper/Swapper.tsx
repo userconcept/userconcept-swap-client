@@ -1,29 +1,35 @@
-import { useState } from 'react';
+import { useAtom } from 'jotai';
 import clsx from 'clsx';
+
+import {
+    fromAssetAtom,
+    toAssetAtom,
+    fromValueAtom,
+    toValueAtom,
+    fromCurrencyAtom,
+    toCurrencyAtom
+} from '../../store/atoms.ts';
 
 import SwapperItem from '../SwapperItem/SwapperItem.tsx';
 
 import IconSwapVert from '../../assets/images/icon_swap_vert.svg?react';
-
-import { AssetItems } from '../../data/AssetItems.data.ts';
 
 import styles from './Swapper.module.scss';
 
 function Swapper({ className }: { className: string; }) {
     console.log('Swapper');
 
-    const [fromAsset, setFromAsset] = useState(AssetItems[0]);
-    const [toAsset, setToAsset] = useState(AssetItems[1]);
+    const [fromAsset, setFromAsset] = useAtom(fromAssetAtom);
+    const [toAsset, setToAsset] = useAtom(toAssetAtom);
 
-    const [fromValue, setFromValue] = useState('');
-    const [toValue, setToValue] = useState('');
+    const [fromValue, setFromValue] = useAtom(fromValueAtom);
+    const [toValue, setToValue] = useAtom(toValueAtom);
 
-    const [fromCurrency, setFromCurrency] = useState(0);
-    const [toCurrency, setToCurrency] = useState(0);
+    const [fromCurrency, setFromCurrency] = useAtom(fromCurrencyAtom);
+    const [toCurrency, setToCurrency] = useAtom(toCurrencyAtom);
+
 
     function trimDecimals(value: number, decimals: number): string {
-        // const factor = Math.pow(10, decimals);
-        // return (Math.round(value * factor) / factor).toString();
         return parseFloat(value.toFixed(decimals)).toString();
     }
 
@@ -100,27 +106,11 @@ function Swapper({ className }: { className: string; }) {
             <SwapperItem
                 className={styles.Swapper__SwapperItem}
                 direction="from"
-                symbol={fromAsset.symbol}
-                name={fromAsset.symbol}
-                image={fromAsset.image}
-                decimals={fromAsset.decimals}
-                price={fromAsset.price}
-                diff24={fromAsset.diff24}
-                currency={fromCurrency}
-                value={fromValue}
                 onChange={handleChangeFromValue}
             />
             <SwapperItem
                 className={styles.Swapper__SwapperItem}
                 direction="to"
-                symbol={toAsset.symbol}
-                name={toAsset.symbol}
-                image={toAsset.image}
-                decimals={toAsset.decimals}
-                price={toAsset.price}
-                diff24={toAsset.diff24}
-                currency={toCurrency}
-                value={toValue}
                 onChange={handleChangeToValue}
             />
             <button

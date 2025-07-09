@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
+import { useAtom, useSetAtom } from 'jotai';
 import clsx from 'clsx';
+
+import {
+    activeDirectionAtom,
+    fromAssetAtom,
+    toAssetAtom,
+    fromValueAtom,
+    toValueAtom,
+    fromCurrencyAtom,
+    toCurrencyAtom
+} from '../../store/atoms.ts';
 
 import InputCustom from '../InputCustom/InputCustom.tsx';
 import ModalAssets from '../ModalAssets/ModalAssets.tsx';
-
-import type { AssetItemType } from '../../types/AssetItem.types.ts';
 
 import IconWallet from '../../assets/images/icon_wallet.svg?react';
 import IconArrowDown from '../../assets/images/icon_arrow_down.svg?react';
@@ -13,28 +22,37 @@ import styles from './SwapperItem.module.scss';
 
 type Props = {
     className: string;
-    direction: string;
-    currency: number;
-    value: string;
+    direction: "from" | "to";
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-} & Omit<AssetItemType, 'id'>
+}
 
 function SwapperItem({
     className,
     direction,
-    symbol,
-    name,
-    image,
-    currency,
-    value,
     onChange
 }: Props) {
     console.log('SwapperItem');
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    function formatCurrency(currency: number) {
-        return currency.toLocaleString('en-US', {
+    const setActiveDirection = useSetAtom(activeDirectionAtom);
+
+    const [asset] = useAtom(
+        direction === 'from' ? fromAssetAtom : toAssetAtom
+    );
+
+    const [value] = useAtom(
+        direction === 'from' ? fromValueAtom : toValueAtom
+    );
+
+    const [currency] = useAtom(
+        direction === 'from' ? fromCurrencyAtom : toCurrencyAtom
+    );
+
+    const { symbol, name, image } = asset;
+
+    function formatCurrency(val: number) {
+        return val.toLocaleString('en-US', {
             style: 'decimal',
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -51,8 +69,7 @@ function SwapperItem({
             <div className={styles.SwapperItem__top}>
                 <div className={styles.SwapperItem__topLeft}>
                     <span>
-                        {direction === 'from' && 'You send'}
-                        {direction === 'to' && 'You receive'}
+                        {direction === 'from' ? 'You send' : 'You receive'}
                     </span>
                 </div>
                 <div className={styles.SwapperItem__topRight}>
@@ -68,14 +85,17 @@ function SwapperItem({
                 <div className={styles.SwapperItem__centerLeft}>
                     <button
                         className={styles.SwapperItem__button}
-                        onClick={() => setModalIsOpen(true)}
+                        onClick={() => {
+                            setModalIsOpen(true);
+                            setActiveDirection(direction);
+                        }}
                     >
-                        <img
+                        {image && <img
                             src={image}
                             width="120"
                             height="120"
                             alt={name}
-                        />
+                        />}
                         <span>{symbol}</span>
                         {<IconArrowDown />}
                     </button>
@@ -84,6 +104,7 @@ function SwapperItem({
                     isOpen={modalIsOpen}
                     onClose={() => setModalIsOpen(false)}
                     title="Select token"
+                    direction={direction}
                 />
                 <div className={styles.SwapperItem__centerRight}>
                     <InputCustom
