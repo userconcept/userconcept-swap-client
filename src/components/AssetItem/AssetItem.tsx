@@ -36,13 +36,13 @@ function AssetItem({
             />
             <div className={styles.AssetItem__top}>
                 <h3 className={styles.AssetItem__title}>{symbol}</h3>
-                <div className={styles.AssetItem__topRight}>${price}</div>
+                <div>${price}</div>
             </div>
             <div className={styles.AssetItem__bottom}>
-                <div className={styles.AssetItem__subtitle}>{name}</div>
-                <div className={styles.AssetItem__bottomRight}>
+                <div>{name}</div>
+                <div>
                     <div className={styles[diff24.startsWith('-') ?
-                        'AssetItem__growDown' : 'AssetItem__growUp'
+                        'AssetItem__grow_down' : 'AssetItem__grow_up'
                     ]}>
                         {diff24}
                     </div>

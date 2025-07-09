@@ -27,15 +27,15 @@
     &__title {
         margin: 0;
         font-size: m.rem(16);
-        line-height: 1.25;
+        line-height: 1.5;
         font-weight: 700;
     }
 
-    &__growUp {
+    &__grow_up {
         color: green;
     }
 
-    &__growDown {
+    &__grow_down {
         color: red;
     }
 }
