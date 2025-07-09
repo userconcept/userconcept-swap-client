@@ -1,7 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router';
+import { Provider as JotaiProvider } from 'jotai';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import { BrowserRouter as Router } from 'react-router';
 
 import App from './App.tsx';
 
@@ -13,12 +14,14 @@ const basename = process.env.NODE_ENV === 'production' ? '/userconcept-swap-clie
 
 root.render(
     <StrictMode>
-        <TonConnectUIProvider
-            manifestUrl="https://userconcept.github.io/userconcept-swap-client/tonconnect-manifest.json"
-        >
-            <Router basename={basename}>
-                <App />
-            </Router>
-        </TonConnectUIProvider>
+        <JotaiProvider>
+            <TonConnectUIProvider
+                manifestUrl="https://userconcept.github.io/userconcept-swap-client/tonconnect-manifest.json"
+            >
+                <Router basename={basename}>
+                    <App />
+                </Router>
+            </TonConnectUIProvider>
+        </JotaiProvider>
     </StrictMode>
 );

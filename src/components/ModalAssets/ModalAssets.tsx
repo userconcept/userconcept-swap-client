@@ -1,3 +1,13 @@
+import { useSetAtom } from 'jotai';
+import {
+    fromAssetAtom,
+    toAssetAtom,
+    fromValueAtom,
+    toValueAtom,
+    fromCurrencyAtom,
+    toCurrencyAtom
+} from '../../store/atoms.ts';
+
 import ModalBase from '../ModalBase/ModalBase.tsx';
 import InputIcon from '../InputIcon/InputIcon.tsx';
 import AssetList from '../AssetList/AssetList.tsx';
@@ -6,19 +16,48 @@ import IconSearch from '../../assets/images/icon_search.svg?react';
 
 import { AssetItems } from '../../data/AssetItems.data.ts';
 
+import type { AssetItemType } from '../../types/AssetItem.types.ts';
+
 import styles from './ModalAssets.module.scss';
 
 type Props = {
     isOpen: boolean;
     onClose: () => void;
     title: string;
+    direction: "from" | "to";
 }
 
-function ModalAssets({ isOpen, onClose, title }: Props) {
+function ModalAssets({
+    isOpen,
+    onClose,
+    title,
+    direction
+}: Props) {
     console.log('ModalAssets');
+    const setFromAsset = useSetAtom(fromAssetAtom);
+    const setToAsset = useSetAtom(toAssetAtom);
+    const setFromValue = useSetAtom(fromValueAtom);
+    const setToValue = useSetAtom(toValueAtom);
+    const setFromCurrency = useSetAtom(fromCurrencyAtom);
+    const setToCurrency = useSetAtom(toCurrencyAtom);
 
     function handleInputChange() {
-        console.log('ModalAssets__InputIcon');
+        console.log('Hi! from ModalAssets.tsx');
+    }
+
+    function handleSelect(item: AssetItemType) {
+        if (direction === 'from') {
+            setFromAsset(item);
+        } else {
+            setToAsset(item);
+        }
+
+        setFromValue('');
+        setToValue('');
+        setFromCurrency(0);
+        setToCurrency(0);
+
+        onClose();
     }
 
     return (
@@ -31,8 +70,8 @@ function ModalAssets({ isOpen, onClose, title }: Props) {
                 <InputIcon
                     className={styles.ModalAssets__InputIcon}
                     type="text"
-                    id={`search-token`}
-                    name={`search-token`}
+                    id="search-token"
+                    name="search-token"
                     onChange={handleInputChange}
                     autoComplete="off"
                     placeholder="Search by name"
@@ -42,6 +81,7 @@ function ModalAssets({ isOpen, onClose, title }: Props) {
                 <AssetList
                     className={styles.ModalAssets__AssetList}
                     items={AssetItems}
+                    onSelect={handleSelect}
                 />
             </div>
         </ModalBase>

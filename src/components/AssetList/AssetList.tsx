@@ -9,19 +9,22 @@ import styles from './AssetList.module.scss';
 type Props = {
     className: string;
     items: AssetItemType[];
+    onSelect: (item: AssetItemType) => void;
 }
 
 function AssetList({
     className,
-    items
+    items,
+    onSelect
 }: Props) {
     console.log('AssetList');
 
     const renderItems = items.map((item: AssetItemType) =>
         <AssetItem
-            className={styles.AssetList__AssetItem}
             key={item.id}
+            className={styles.AssetList__AssetItem}
             {...item}
+            onSelect={() => onSelect(item)}
         />
     );
 
