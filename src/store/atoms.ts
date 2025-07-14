@@ -12,3 +12,5 @@ export const toValueAtom = atom<string>('');
 
 export const fromCurrencyAtom = atom<number>(0);
 export const toCurrencyAtom = atom<number>(0);
+
+export const activeSlippageAtom = atom<number>(5);

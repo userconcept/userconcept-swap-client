@@ -28,7 +28,6 @@ function Swapper({ className }: { className: string; }) {
     const [fromCurrency, setFromCurrency] = useAtom(fromCurrencyAtom);
     const [toCurrency, setToCurrency] = useAtom(toCurrencyAtom);
 
-
     function trimDecimals(value: number, decimals: number): string {
         return parseFloat(value.toFixed(decimals)).toString();
     }

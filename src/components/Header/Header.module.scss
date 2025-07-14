@@ -8,6 +8,38 @@
     background-color: v.$color_light_surface_container;
     z-index: 1;
 
+    &_NavHeader_open {
+
+        & .Header__NavHeader {
+            transform: translateY(0);
+            z-index: 1;
+
+            @include m.media_1200_min_width {
+                transform: translate(-50%, -50%);
+                z-index: auto;
+            }
+        }
+
+        & .Header__overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            @include m.color_light_overlay;
+
+            @include m.media_1200_min_width {
+                position: static;
+                top: auto;
+                left: auto;
+                right: auto;
+                bottom: auto;
+                background-color: transparent;
+                backdrop-filter: none;
+            }
+        }
+    }
+
     &__container {
         display: flex;
         padding: 0 m.rem(16);
@@ -42,14 +74,6 @@
             bottom: auto;
             transform: translate(-50%, -50%);
             transition: transform v.$transition_none;
-        }
-
-        &_active {
-            transform: translateY(0);
-
-            @include m.media_1200_min_width {
-                transform: translate(-50%, -50%);
-            }
         }
     }
 

@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import ReactDOM from 'react-dom';
 
 import Title from '../Title/Title.tsx';
@@ -27,8 +27,17 @@ function ModalBase({
 
     if (!isOpen) return null;
 
+    function handleOverlayClick(e: React.MouseEvent<HTMLDivElement>) {
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    }
+
     return ReactDOM.createPortal(
-        <div className={styles.ModalBase}>
+        <div
+            className={styles.ModalBase}
+            onClick={handleOverlayClick}
+        >
             <div className={styles.ModalBase__container}>
                 <div className={styles.ModalBase__modal}>
                     <div className={styles.ModalBase__header}>
