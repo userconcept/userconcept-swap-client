@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import clsx from 'clsx';
 
 import Logo from '../Logo/Logo.tsx';
 import NavHeader from '../NavHeader/NavHeader.tsx';
@@ -20,24 +21,23 @@ function Header() {
     }
 
     function handleClick(e: React.MouseEvent<HTMLElement>) {
-        if (
-            navIsOpen &&
-            (
-                e.target instanceof HTMLAnchorElement ||
-                e.target instanceof SVGElement
-            )
-        ) {
+        if (navIsOpen && e.target instanceof HTMLAnchorElement) {
             setNavIsOpen(!navIsOpen);
         }
     }
 
     return (
-        <header className={styles.Header} onClick={handleClick}>
+        <header
+            className={clsx(
+                styles.Header,
+                navIsOpen && styles.Header_NavHeader_open
+            )}
+        >
             <div className={styles.Header__container}>
                 <Logo className={styles.Header__Logo} />
                 <NavHeader
                     className={styles.Header__NavHeader}
-                    isActive={navIsOpen}
+                    onClick={handleClick}
                 />
                 <ButtonNav
                     className={styles.Header__ButtonNav}
@@ -55,6 +55,12 @@ function Header() {
                 </ButtonSquare>
                 <ButtonConnect />
             </div>
+            {navIsOpen &&
+                <div
+                    className={styles.Header__overlay}
+                    onClick={handleNavOpen}
+                ></div>
+            }
         </header>
     );
 }

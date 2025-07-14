@@ -5,6 +5,7 @@
 
     &__container {
         padding: 0 m.rem(16);
+        position: relative;
 
         @include m.media_450_min_width {
             max-width: m.rem(450);
@@ -14,6 +15,12 @@
 
     &__Title {
         margin: 0;
+    }
+
+    &__ButtonSquare {
+        position: absolute;
+        top: m.rem(-6);
+        right: m.rem(16);
     }
 
     &__Swapper {

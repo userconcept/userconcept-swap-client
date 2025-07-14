@@ -1,0 +1,27 @@
+@use '../../assets/styles/vars' as v;
+@use '../../assets/styles/mixins' as m;
+
+.SettingsButtons {
+
+    &__Title {
+        margin: 0;
+    }
+
+    &__Text {
+        margin: m.rem(16) 0 0;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: m.rem(16);
+        margin-top: m.rem(20);
+    }
+
+    &__Button {
+        flex-grow: 1;
+
+        &_active {
+            background-color: v.$color_light_surface;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAtom, useSetAtom } from 'jotai';
+import { useAtomValue, useSetAtom } from 'jotai';
 import clsx from 'clsx';
 
 import {
@@ -37,15 +37,15 @@ function SwapperItem({
 
     const setActiveDirection = useSetAtom(activeDirectionAtom);
 
-    const [asset] = useAtom(
+    const asset = useAtomValue(
         direction === 'from' ? fromAssetAtom : toAssetAtom
     );
 
-    const [value] = useAtom(
+    const value = useAtomValue(
         direction === 'from' ? fromValueAtom : toValueAtom
     );
 
-    const [currency] = useAtom(
+    const currency = useAtomValue(
         direction === 'from' ? fromCurrencyAtom : toCurrencyAtom
     );
 

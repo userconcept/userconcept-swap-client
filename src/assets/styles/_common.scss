@@ -9,10 +9,6 @@
     box-sizing: border-box;
 }
 
-::selection {
-    background-color: v.$color_light_on_surface_selection;
-}
-
 html {
     font-size: 100%;
     text-size-adjust: none;

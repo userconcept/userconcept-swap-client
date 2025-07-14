@@ -1,18 +1,18 @@
+import React from 'react';
 import clsx from 'clsx';
 
 import NavList from '../NavList/NavList.tsx';
 
-import stylesHeader from '../Header/Header.module.scss';
 import styles from './NavHeader.module.scss';
 
 type Props = {
     className: string;
-    isActive: boolean;
+    onClick: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 function NavHeader({
     className,
-    isActive
+    onClick
 }: Props) {
     console.log('NavHeader');
 
@@ -20,9 +20,9 @@ function NavHeader({
         <nav
             className={clsx(
                 styles.NavHeader,
-                className,
-                isActive && stylesHeader.Header__NavHeader_active
+                className
             )}
+            onClick={onClick}
         >
             <NavList className={styles.NavHeader__NavList} />
         </nav>

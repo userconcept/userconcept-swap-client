@@ -2,20 +2,20 @@ import type { AssetItemType } from '../types/AssetItem.types.tsx';
 
 export const AssetItems: AssetItemType[] = [{
     id: '1',
-    symbol: 'USDT',
-    name: 'Tether USDT',
-    image: 'https://userconcept.github.io/userconcept-swap-client/images/image_usdt.png',
-    decimals: 6,
-    price: 1.00,
-    diff24: '0.00%'
-}, {
-    id: '2',
     symbol: 'TON',
     name: 'Toncoin',
     image: 'https://userconcept.github.io/userconcept-swap-client/images/image_ton.png',
     decimals: 9,
     price: 2.88,
     diff24: '3.31%'
+}, {
+    id: '2',
+    symbol: 'USDT',
+    name: 'Tether USDT',
+    image: 'https://userconcept.github.io/userconcept-swap-client/images/image_usdt.png',
+    decimals: 6,
+    price: 1.00,
+    diff24: '0.00%'
 }, {
     id: '3',
     symbol: 'NOT',

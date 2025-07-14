@@ -1,5 +1,12 @@
 import { useState } from 'react';
+import { useAtomValue } from 'jotai';
 import clsx from 'clsx';
+
+import {
+    toAssetAtom,
+    toValueAtom,
+    activeSlippageAtom
+} from '../../store/atoms.ts';
 
 import IconArrowDown from '../../assets/images/icon_arrow_down.svg?react';
 
@@ -12,6 +19,19 @@ function Collapse({ className }: { className: string; }) {
 
     function handleClick() {
         setIsOpen(!isOpen);
+    }
+
+    const {
+        symbol,
+        decimals
+    } = useAtomValue(toAssetAtom);
+
+    const toValue = useAtomValue(toValueAtom);
+
+    const slippage = useAtomValue(activeSlippageAtom);
+
+    function minReceived() {
+        return parseFloat((+toValue * (1 - slippage/100)).toFixed(decimals)).toString();
     }
 
     return (
@@ -37,7 +57,7 @@ function Collapse({ className }: { className: string; }) {
                                 Max. slippage
                             </div>
                             <div className={styles.Collapse__itemRight}>
-                                1%
+                                {`${slippage}%`}
                             </div>
                         </li>
                         <li className={styles.Collapse__item}>
@@ -45,7 +65,7 @@ function Collapse({ className }: { className: string; }) {
                                 Min. received
                             </div>
                             <div className={styles.Collapse__itemRight}>
-                                ≈0.99 TON
+                                {`≈${minReceived()} ${symbol}`}
                             </div>
                         </li>
                         <li className={styles.Collapse__item}>

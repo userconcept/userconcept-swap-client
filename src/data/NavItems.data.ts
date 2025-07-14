@@ -1,15 +1,15 @@
-import { NavItem } from '../types/NavItem.types.ts';
+import type { NavItemType } from '../types/NavItem.types.ts';
 
-export const NavItems: NavItem[] = [{
-    id: 1,
+export const NavItems: NavItemType[] = [{
+    id: '1',
     href: '/swap',
     text: 'Swap'
 }, {
-    id: 2,
+    id: '2',
     href: '/about',
     text: 'About'
 }, {
-    id: 3,
+    id: '3',
     href: '/contact',
     text: 'Contact'
 }];
