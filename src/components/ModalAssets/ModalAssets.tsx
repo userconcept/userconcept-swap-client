@@ -1,3 +1,7 @@
+import {
+    useNavigate,
+    useLocation
+} from 'react-router';
 import { useSetAtom } from 'jotai';
 import {
     fromAssetAtom,
@@ -34,6 +38,10 @@ function ModalAssets({
     direction
 }: Props) {
     console.log('ModalAssets');
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const setFromAsset = useSetAtom(fromAssetAtom);
     const setToAsset = useSetAtom(toAssetAtom);
     const setFromValue = useSetAtom(fromValueAtom);
@@ -46,11 +54,17 @@ function ModalAssets({
     }
 
     function handleSelect(item: AssetItemType) {
+        const searchParams = new URLSearchParams(location.search);
+
         if (direction === 'from') {
             setFromAsset(item);
+            searchParams.set('from', item.symbol);
         } else {
             setToAsset(item);
+            searchParams.set('to', item.symbol);
         }
+
+        navigate({ search: searchParams.toString() }, { replace: true });
 
         setFromValue('');
         setToValue('');
