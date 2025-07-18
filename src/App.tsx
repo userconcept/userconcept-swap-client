@@ -1,29 +1,18 @@
-import {
-    Routes,
-    Route,
-    Navigate
-} from 'react-router';
+import { RouterProvider } from 'react-router/dom';
+import { TonConnectUIProvider } from '@tonconnect/ui-react';
+import { Provider as JotaiProvider } from 'jotai';
 
-import Layout from './components/Layout/Layout.tsx';
-import Swap from './components/Swap/Swap.tsx';
-import About from './components/About/About.tsx';
-import Contact from './components/Contact/Contact.tsx';
-import NotFound from './components/NotFound/NotFound.tsx';
+import router from './router.tsx';
 
 function App() {
     return (
-        <Routes>
-            <Route path="/" element={<Layout />}>
-                <Route path="swap" element={<Swap />} />
-                <Route path="about" element={<About />} />
-                <Route path="contact" element={<Contact />} />
-                <Route path="*" element={<NotFound text="Not Found" />} />
-                <Route
-                    index
-                    element={<Navigate to="swap" replace />}
-                />
-            </Route>
-        </Routes>
+        <JotaiProvider>
+            <TonConnectUIProvider
+                manifestUrl="https://userconcept.github.io/userconcept-swap-client/tonconnect-manifest.json"
+            >
+                <RouterProvider router={router} />
+            </TonConnectUIProvider>
+        </JotaiProvider>
     );
 }
 

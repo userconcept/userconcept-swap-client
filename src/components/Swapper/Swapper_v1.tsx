@@ -1,6 +1,4 @@
-import { useRef } from 'react';
 import {
-    useLoaderData,
     useNavigate,
     useLocation
 } from 'react-router';
@@ -20,19 +18,10 @@ import SwapperItem from '../SwapperItem/SwapperItem.tsx';
 
 import IconSwapVert from '../../assets/images/icon_swap_vert.svg?react';
 
-import type { AssetItemType } from '../../types/AssetItem.types.ts';
-
 import styles from './Swapper.module.scss';
 
 function Swapper({ className }: { className: string; }) {
     console.log('Swapper');
-
-    const isInitialized = useRef(false);
-
-    const data = useLoaderData() as {
-        from?: AssetItemType;
-        to?: AssetItemType;
-    };
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -45,12 +34,6 @@ function Swapper({ className }: { className: string; }) {
 
     const [fromCurrency, setFromCurrency] = useAtom(fromCurrencyAtom);
     const [toCurrency, setToCurrency] = useAtom(toCurrencyAtom);
-
-    if (!isInitialized.current) {
-        if (data.from) setFromAsset(data.from);
-        if (data.to) setToAsset(data.to);
-        isInitialized.current = true;
-    }
 
     function trimDecimals(value: number, decimals: number): string {
         return parseFloat(value.toFixed(decimals)).toString();
