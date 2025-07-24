@@ -1,8 +1,7 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .Logo {
-    color: v.$color_light_on_surface;
+    color: inherit;
     text-decoration: none;
 
     svg {

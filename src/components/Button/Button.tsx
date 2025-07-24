@@ -18,7 +18,7 @@ type Props = ComponentProps<typeof Link>
     | ButtonHTMLAttributes<HTMLButtonElement>
 
 type CustomProps = {
-    color: "primary" | "surface_container";
+    color: "base" | "primary";
 }
 
 function Button({

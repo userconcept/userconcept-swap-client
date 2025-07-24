@@ -1,4 +1,3 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .Rate {
@@ -25,7 +24,7 @@
         font-family: inherit;
         overflow: visible;
         text-transform: none;
-        color: v.$color_light_on_surface;
+        color: inherit;
         background-color: transparent;
         position: relative;
         cursor: pointer;

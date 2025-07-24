@@ -14,3 +14,12 @@ export const fromCurrencyAtom = atom<number>(0);
 export const toCurrencyAtom = atom<number>(0);
 
 export const activeSlippageAtom = atom<number>(5);
+
+// Theme Atom:
+
+export type Theme = 'light' | 'dark';
+
+const initialTheme =
+    localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+
+export const themeAtom = atom<Theme>(initialTheme);

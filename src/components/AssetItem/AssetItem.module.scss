@@ -1,10 +1,10 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .AssetItem {
-    border: m.rem(1) solid v.$color_light_on_surface;
+    border: m.rem(1) solid var(--color-surface-container);
     padding: m.rem(11) m.rem(16) m.rem(11) m.rem(56);
     border-radius: m.rem(8);
+    background-color: var(--color-surface-container);
     position: relative;
 
     &__img {
@@ -32,10 +32,10 @@
     }
 
     &__grow_up {
-        color: green;
+        color: var(--color-grow-up);
     }
 
     &__grow_down {
-        color: red;
+        color: var(--color-grow-down);
     }
 }

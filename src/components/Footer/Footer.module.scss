@@ -1,9 +1,8 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .Footer {
     padding: m.rem(16) 0;
-    background-color: v.$color_light_surface_container;
+    background-color: var(--color-surface-container);
 
     &__container {
         display: flex;
@@ -17,6 +16,7 @@
     }
 
     &__Logo {
+        color: var(--color-on-surface);
 
         @include m.media_1200_min_width {
             display: flex;

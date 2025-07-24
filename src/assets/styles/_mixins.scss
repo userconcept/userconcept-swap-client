@@ -1,5 +1,3 @@
-@use './vars' as v;
-
 // Mixins:
 
 // Rems:
@@ -12,8 +10,8 @@
 // Colors:
 
 @mixin color_light_overlay {
-    background-color: v.$color_light_overlay;
-    backdrop-filter: v.$blur_light_overlay;
+    background-color: var(--color-overlay);
+    backdrop-filter: var(--blur-overlay);
 }
 
 // Media:

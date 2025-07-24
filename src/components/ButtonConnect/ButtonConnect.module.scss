@@ -1,4 +1,3 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .ButtonConnect {
@@ -6,15 +5,15 @@
 
     &__button {
         display: flex;
-        border: m.rem(1) solid v.$color_light_on_surface;
+        border: m.rem(1) solid var(--color-primary);
         padding: m.rem(11) m.rem(20);
         font-size: m.rem(16);
         line-height: 1.5;
         font-family: inherit;
         overflow: visible;
         text-transform: none;
-        color: v.$color_light_on_surface;
-        background-color: transparent;
+        color: var(--color-on-primary);
+        background-color: var(--color-primary);
         border-radius: m.rem(8);
         cursor: pointer;
 
@@ -54,9 +53,9 @@
         top: 100%;
         right: 0;
         margin-top: m.rem(8);
-        border: m.rem(1) solid v.$color_light_on_surface;
+        border: m.rem(1) solid var(--color-surface-container);
         padding: m.rem(16);
-        background-color: v.$color_light_surface_container;
+        background-color: var(--color-surface-container);
         border-radius: m.rem(8);
     }
 
@@ -77,9 +76,9 @@
     }
 
     &__buttonDisconnect {
-        margin-top: m.rem(8);
+        margin-top: m.rem(16);
         width: 100%;
-        border: m.rem(1) solid v.$color_light_on_surface;
+        border: m.rem(1) solid var(--color-surface);
         padding: m.rem(11) m.rem(20);
         font-size: m.rem(16);
         line-height: 1.5;
@@ -87,8 +86,8 @@
         overflow: visible;
         text-transform: none;
         text-align: center;
-        color: v.$color_light_on_surface;
-        background-color: transparent;
+        color: inherit;
+        background-color: var(--color-surface);
         border-radius: m.rem(8);
         cursor: pointer;
     }

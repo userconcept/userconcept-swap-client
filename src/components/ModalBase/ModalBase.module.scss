@@ -1,4 +1,3 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .ModalBase {
@@ -20,7 +19,7 @@
     }
 
     &__modal {
-        background-color: v.$color_light_surface_container;
+        background-color: var(--color-surface);
         border-bottom-left-radius: m.rem(8);
         border-bottom-right-radius: m.rem(8);
     }
