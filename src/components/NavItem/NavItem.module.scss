@@ -1,4 +1,3 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .NavItem {
@@ -7,15 +6,14 @@
     &_active {
 
         & .NavItem__link {
-            color: v.$color_light_primary;
+            color: var(--color-primary);
         }
     }
 
     &__link {
         display: block;
         padding: m.rem(12) m.rem(16);
-        color: v.$color_light_on_surface;
+        color: inherit;
         text-decoration: none;
-        transition: color v.$transition_01;
     }
 }

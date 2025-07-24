@@ -1,4 +1,3 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .InputIcon {
@@ -9,19 +8,19 @@
         width: 100%;
         height: m.rem(48);
         outline: none;
-        border: m.rem(1) solid v.$color_light_on_surface;
+        border: m.rem(1) solid var(--color-surface-container);
         padding: m.rem(11) m.rem(16) m.rem(11) m.rem(56);
         font-size: m.rem(16);
         line-height: 1.5;
         font-family: inherit;
         overflow: visible;
-        color: v.$color_light_on_surface;
-        background-color: transparent;
+        color: inherit;
+        background-color: var(--color-surface-container);
         border-radius: m.rem(8);
 
         &::placeholder {
             opacity: 1;
-            color: v.$color_light_on_surface;
+            color: inherit;
         }
     }
 
@@ -32,7 +31,7 @@
         margin-top: m.rem(-12);
         width: m.rem(24);
         height: m.rem(24);
-        fill: v.$color_light_on_surface;
+        fill: currentColor;
         pointer-events: none;
     }
 }

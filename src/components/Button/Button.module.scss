@@ -1,27 +1,27 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .Button {
-    border: m.rem(1) solid v.$color_light_on_surface;
+    border: m.rem(1) solid transparent;
     padding: m.rem(11) m.rem(20);
     font-size: m.rem(16);
     line-height: 1.5;
     font-family: inherit;
     overflow: visible;
     text-transform: none;
-    color: v.$color_light_on_surface;
+    color: inherit;
     background-color: transparent;
     border-radius: m.rem(8);
     cursor: pointer;
 
-    &_primary {
-        border-color: v.$color_light_on_surface;
-        background-color: transparent;
+    &_base {
+        border-color: var(--color-surface-container);
+        background-color: var(--color-surface-container);
     }
 
-    &_surface_container {
-        border-color: v.$color_light_surface_container;
-        background-color: v.$color_light_surface_container;
+    &_primary {
+        border-color: var(--color-primary);
+        color: var(--color-on-primary);
+        background-color: var(--color-primary);
     }
 }
 

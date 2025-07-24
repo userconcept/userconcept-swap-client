@@ -1,7 +1,8 @@
 // Common styles:
 
-@use './mixins' as m;
+@use './theme' as *;
 @use './vars' as v;
+@use './mixins' as m;
 
 *,
 *::before,
@@ -20,7 +21,8 @@ body {
     line-height: 1.5;
     font-weight: 400;
     font-family: v.$font_family_normal;
-    color: v.$color_light_on_surface;
+    color: var(--color-on-surface);
+    background-color: var(--color-surface);
     text-rendering: optimizeLegibility;
 }
 

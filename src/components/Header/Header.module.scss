@@ -5,7 +5,7 @@
     position: sticky;
     top: 0;
     padding: m.rem(16) 0;
-    background-color: v.$color_light_surface_container;
+    background-color: var(--color-surface-container);
     z-index: 1;
 
     &_NavHeader_open {
@@ -52,6 +52,7 @@
     }
 
     &__Logo {
+        color: var(--color-on-surface);
 
         @include m.media_1200_min_width {
             display: flex;

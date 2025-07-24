@@ -1,9 +1,8 @@
-@use '../../assets/styles/vars' as v;
 @use '../../assets/styles/mixins' as m;
 
 .SwapperItem {
     padding: m.rem(16);
-    background-color: v.$color_light_surface_container;
+    background-color: var(--color-surface-container);
     border-radius: m.rem(8);
 
     &__top,
@@ -21,7 +20,7 @@
         font-family: inherit;
         overflow: visible;
         text-transform: none;
-        color: v.$color_light_on_surface;
+        color: inherit;
         background-color: transparent;
         position: relative;
         cursor: pointer;
@@ -60,7 +59,7 @@
         font-family: inherit;
         overflow: visible;
         text-transform: uppercase;
-        color: v.$color_light_on_surface;
+        color: inherit;
         background-color: transparent;
         cursor: pointer;
 

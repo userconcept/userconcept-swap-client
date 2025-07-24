@@ -1,0 +1,41 @@
+// Color Themes:
+
+// #0000aa
+
+// Light Theme:
+
+[data-theme="light"] {
+    --color-primary: #565992;
+    --color-on-primary: #ffffff;
+
+    --color-surface: #fbf8ff;
+    --color-on-surface: #1b1b21;
+    --color-surface-container: #f0ecf4;
+
+    --color-overlay: rgba(86, 89, 146, .5);
+    --blur-overlay: blur(3px);
+
+    --color-primary-hover: blue;
+
+    --color-grow-up: green;
+    --color-grow-down: red;
+}
+
+// Dark Theme:
+
+[data-theme="dark"] {
+    --color-primary: #bfc2ff;
+    --color-on-primary: #272b60;
+
+    --color-surface: #131318;
+    --color-on-surface: #e4e1e9;
+    --color-surface-container: #1f1f25;
+
+    --color-overlay: rgba(38, 38, 51, .5);
+    --blur-overlay: blur(3px);
+
+    --color-primary-hover: blue;
+
+    --color-grow-up: green;
+    --color-grow-down: red;
+}

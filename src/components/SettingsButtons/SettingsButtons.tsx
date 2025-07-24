@@ -32,7 +32,7 @@ function SettingsButtons({ className }: { className: string; }) {
                 activeSlippage ===
                     item.percents && styles.SettingsButtons__Button_active
             )}
-            color="primary"
+            color="base"
             onClick={() => handleButtonClick(item)}
         >
             {item.text}

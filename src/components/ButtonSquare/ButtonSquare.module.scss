@@ -1,5 +1,4 @@
 @use '../../assets/styles/mixins' as m;
-@use '../../assets/styles/vars' as v;
 
 .ButtonSquare {
     width: m.rem(48);
@@ -9,19 +8,19 @@
     font-family: inherit;
     overflow: visible;
     text-transform: none;
+    color: inherit;
     background-color: transparent;
     cursor: pointer;
 
     svg {
         width: m.rem(24);
         height: m.rem(24);
-        fill: currentColor;
     }
 
     &_base {
 
         svg {
-            fill: v.$color_light_on_surface;
+            fill: currentColor;
         }
     }
 
